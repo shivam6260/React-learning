@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {Switch, Route} from "react-router-dom";
+import Shirt from './Navigation/Shirt';
+import Jeans from "./Navigation/Jeans";
+import HomePage from "./Navigation/HomePage";
+import FootWear from "./Navigation/FootWear";
+import SunGlass from "./Navigation/Sunglasses";
+import Jackets from "./Navigation/Jackets";
+import Wallets from "./Navigation/Wallets";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/jeans" component={Jeans} />
+        <Route exact path="/shirt" component={Shirt} />
+        <Route exact path="/footwear" component={FootWear} />
+        <Route exact path="/sunglasses" component={SunGlass} />
+        <Route exact path="/jacket" component={Jackets} />
+        <Route exact path="/wallet" component={Wallets} />
+      </Switch>
+    );
+        
+  }
 }
 
 export default App;
