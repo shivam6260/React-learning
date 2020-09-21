@@ -5,7 +5,7 @@ import "./Shirt.css";
 class Shirt extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = {  
       Shirt: [
         {
           brand: "Van Heusen",
